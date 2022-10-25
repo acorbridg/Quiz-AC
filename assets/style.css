@@ -143,3 +143,8 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
+.timer {
+  color: white;
+  background-color: hsl(360, 91%, 36%);
+}

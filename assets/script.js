@@ -1,22 +1,53 @@
 var questions = [ 
     {
-        question: "what is the velocity of an unlaiden swallow?",
+        question: "Commonly used data types DO NOT include:",
         answers: {
-            a: "3",
-            b: "2",
-            c: "24 mph",
+            a: "booleans",
+            b: "strings",
+            c: "alerts",
+            d: "numbers"
         },
         correctAnswer: "c",
     },
     {   
-        question: "what is your favorite color?",
+        question: "The conditions of an if/else statement is enclosed with ______.",
         answers: {
-            a: "blue",
-            b: "pink",
-            c: "blue...no pink",
+            a: "curly brackets",
+            b: "parenthesis",
+            c: "quotations",
         },
-        correctAnswer: "c"
+        correctAnswer: "b"
+    },
+    {   
+        question: "Arrays in Javascript can be used to store ______.",
+        answers: {
+            a: "numbers and strings",
+            b: "other arrays",
+            c: "booleans",
+            d: "all of the above"
+        },
+        correctAnswer: "d"
+    },
+    {   
+        question: "String values must be enclosed within ______ when being assigned to variables.",
+        answers: {
+            a: "double quotations",
+            b: "parenthesis",
+            c: "curly brackets",
+        },
+        correctAnswer: "a"
+    },
+    {   
+        question: "A very useful tool used during development and debugging for printing content to the debugger is _______.",
+        answers: {
+            a: "Javascript",
+            b: "terminal /bash",
+            c: "for loops",
+            d: "console.log"
+        },
+        correctAnswer: "d"
     }
+
 ]
    
 
@@ -51,38 +82,25 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     showQuestions(questions, quizContainer);
 }
 function showResults(questions, quizContainer, resultsContainer, questionindex ){
-        // code will go here
-        // gather answer containers from our quiz
+        
     var answerContainers = quizContainer.querySelectorAll('.answers');
     
-    // keep track of user's answers
     var userAnswer = '';
-    var resultCorrect = "FATALITY";
+    var resultCorrect = "Correct!";
     
-    // for each question...
-    
-
-        // find selected answer
         userAnswer = (answerContainers[questionindex].querySelector('input[name=question'+questionindex+']:checked')||{}).value;
-        
-        // if answer is correct
-        if(userAnswer===questions[questionindex].correctAnswer){
-            // add to the number of correct answers
-            
-            
-            // color the answers green
+     
+        if(userAnswer===questions[questionindex].correctAnswer){        
             answerContainers[questionindex].style.color = 'lightgreen';
         }
-        // if answer is wrong or blank
         else{
-            // color the answers red
             answerContainers[questionindex].style.color = 'red';
-            resultCorrect = "KO"
+            resultCorrect = "Wrong!"
         }
     
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = resultCorrect;
+    resultsContainer.innerHTML =  resultCorrect;
 }
 	
 
@@ -135,3 +153,6 @@ answerClick();
 
     }
 
+setInterval.onclick = function(){
+    
+}
